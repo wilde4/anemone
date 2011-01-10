@@ -220,7 +220,7 @@ module Anemone
     #
     def do_page_blocks(page)
       @on_every_page_blocks.each do |block|
-        block.call(page)
+        block.call(page) rescue nil
       end
 
       @on_pages_like_blocks.each do |pattern, blocks|
